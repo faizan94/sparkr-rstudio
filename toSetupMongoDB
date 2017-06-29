@@ -1,0 +1,10 @@
+# To setup mongo db
+
+docker pull mongo
+docker run -d --name myMongoDB mongo
+
+# Mongo is successfuly started, now attach mongo with a new container of image the already existed
+
+docker run --link=myMongoDB:mongodb -it __nameOfImage__OrItsFullCommand__
+
+# Wallah its successfuly created
