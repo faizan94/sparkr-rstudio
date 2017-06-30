@@ -32,4 +32,8 @@ RUN cd /home/rstudio \
 	&& wget https://d3kbcqa49mib13.cloudfront.net/spark-2.1.1-bin-hadoop2.7.tgz \
 	&& tar -zxvf spark* \
 	# && rm spark-2.1.1-bin-hadoop2.7.tgz \
+
+# Install Mongo for remote usage
+
+RUN apt-get install mongo
 	

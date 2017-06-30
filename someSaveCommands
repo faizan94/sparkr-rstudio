@@ -1,4 +1,4 @@
-docker run --link=myMongoDB:mongodb  -dt -p 8790:8787 --name myR spark/rstudio # Get it yourself
+docker run --link=myMongoDB:mongodb  -dt -p 8790:8787 --name myR spark/rstudio 
 docker stop __name__ # to stop
 docker ps -a # show all
 docker images # show all images
@@ -6,4 +6,20 @@ docker exec -it __name__ bash # to execute bash
 docker build -t __nametochoose__ . # To build a docker image
 docker rmi $(docker images -a -q) # Remove all images that are not currently used
 docker rm $(docker ps -a -f status=exited -q) # Remove all stopped containers
+docker run -d --name myMongoDB mongo ## To tun mongo
+docker pull mongo ## To pull mongo image
 
+env | grep MONGODB ## To check whether mongo is succesfully in myContainer
+
+mongo --host 172.17.0.2(OR the host ip ) --port 27017 ## To use mongo in my container
+
+
+# Page to follow for spark R
+https://github.com/LyzandeR/Rstudio-Spark-Tutorial/blob/master/Spark_and_R.Rmd
+
+
+# RMongo Documentation
+https://cran.r-project.org/web/packages/RMongo/RMongo.pdf
+
+
+# For spark please use directory "/home/rstudio/spark-2.1.1-bin-hadoop2.7" as it is the one which is stalled use this docker file
